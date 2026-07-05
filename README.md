@@ -4,6 +4,11 @@
 
 A full-stack application demonstrating optimistic UI, real-time synchronization, and race-condition handling using custom mutex in Node.js.
 
+You can access the live deployment at
+
+- Client - **https://logi-stack-cnt.vercel.app/**
+- Server - **https://logi-stack-svr.vercel.app/**
+
 ## Tech Stack
 
 - **Frontend**: React 19 + TypeScript + Tailwind + Framer Motion + @dnd-kit + Sonner
