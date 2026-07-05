@@ -49,7 +49,7 @@ function broadcast(event: SSEEvent) {
 
 app.get("/report", (_req, _res) => {
   try {
-    const reportFilePath = path.join(process.cwd(), "./report.md");
+    const reportFilePath = path.join(import.meta.dirname, "./report.md");
 
     const markdownContent = fs.readFileSync(reportFilePath, "utf-8");
 
