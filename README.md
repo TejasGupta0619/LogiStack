@@ -9,6 +9,8 @@ You can access the live deployment at
 - Client - **https://logi-stack-cnt.vercel.app/**
 - Server - **https://logi-stack-svr.vercel.app/**
 
+-# Note - Server might face issues because of the connection being timed out due to limitations by vercel.
+
 ## Tech Stack
 
 - **Frontend**: React 19 + TypeScript + Tailwind + Framer Motion + @dnd-kit + Sonner
