@@ -21,6 +21,8 @@ import {
   type CollisionPayload,
   type SSEEvent,
 } from "./types.js";
+import path from "path";
+import fs from "fs";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -44,6 +46,20 @@ function broadcast(event: SSEEvent) {
     } catch (e) {}
   });
 }
+
+app.get("/report", (_req, _res) => {
+  try {
+    const reportFilePath = path.resolve(process.cwd(), "../Report.md");
+
+    const markdownContent = fs.readFileSync(reportFilePath, "utf-8");
+
+    _res.setHeader("Content-Type", "text/plain");
+    _res.send(markdownContent);
+  } catch (error) {
+    console.log("Error while getting report, " + error);
+    return _res.send("Report Not found.");
+  }
+});
 
 app.get("/api/health", (_req, res) =>
   res.json({ status: "ok", time: new Date().toISOString() }),

@@ -229,3 +229,10 @@ export const PRIORITY_META: Record<
     order: 3,
   },
 };
+
+export const ListPages = {
+  Dashboard: 0,
+  Report: 1,
+};
+
+export type ListPagesType = (typeof ListPages)[keyof typeof ListPages];

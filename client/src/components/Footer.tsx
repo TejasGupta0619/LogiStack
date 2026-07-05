@@ -14,7 +14,8 @@ import {
     NotebookTabs,
     type LucideIcon,
 } from 'lucide-react';
-
+import { ListPages } from '../types';
+import type { SetStateAction } from 'react';
 
 /**
  * Github icon
@@ -68,14 +69,13 @@ const FEATURES = [
     { icon: Layers, label: 'Drag & Drop + Rollback' },
 ] as const;
 
-
 /**
  * Footer component
  *
  * @export
  * @returns {React.JSX.Element} 
  */
-export default function Footer() {
+export default function Footer({ onViewChange }: { onViewChange: React.Dispatch<SetStateAction<number>> }) {
     return (
         <footer className="mt-auto border-t border-slate-200 bg-white">
             {/* Main div */}
@@ -192,15 +192,13 @@ export default function Footer() {
 
                                 <span className="text-slate-200">|</span>
 
-                                <a
-                                    href="/Report"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <button
+                                    onClick={() => { onViewChange(ListPages.Report) }}
                                     className="flex items-center gap-1 text-[10px] text-slate-600 hover:text-slate-900 transition-colors group">
                                     <NotebookTabs className="w-3.5 h-3.5" />
                                     <span className="group-hover:underline">Full Report</span>
                                     <ExternalLink className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                </a>
+                                </button>
                             </div>
                         </motion.div>
                     </div>
