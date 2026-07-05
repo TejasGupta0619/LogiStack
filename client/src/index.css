@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+/* Logistics Dashboard Custom Styles */
+:root {
+  --primary: #0f172a;
+  --accent: #3b82f6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --surface: #ffffff;
+  --surface-secondary: #f8fafc;
+  --border: #e2e8f0;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.container-slot {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container-slot:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.shipment-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: grab;
+}
+
+.shipment-card:active {
+  cursor: grabbing;
+}
+
+.drag-over {
+  background-color: #f0f9ff;
+  border-color: #3b82f6;
+  border-style: dashed;
+}
+
+/* Optimistic UI + Snapback animation */
+.snapback {
+  animation: snapback-anim 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes snapback-anim {
+  0% {
+    transform: scale(0.95) translateY(0);
+    opacity: 0.8;
+  }
+  40% {
+    transform: scale(1.02) translateY(-8px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.conflict-toast {
+  animation: slide-in 0.3s ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* SSE connection indicator */
+.connection-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.connection-dot.connected {
+  background-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.connection-dot.disconnected {
+  background-color: #ef4444;
+}
+
+/* Container progress bar */
+.capacity-bar {
+  transition: width 0.3s ease-out;
+}
