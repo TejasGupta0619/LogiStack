@@ -6,7 +6,7 @@ import { ListPages } from "./types";
 export default function ReportPage({ onViewChange }: { onViewChange: React.Dispatch<React.SetStateAction<number>> }) {
     const [mdContent, setMdContent] = useState<string>("Loading report content . . .");
     useEffect(() => {
-        fetch("http://localhost:4000/Report").then((res) => res.text()).then((text) => setMdContent(text)).catch(() => setMdContent('Failed to parse report file from workspace root.'));
+        fetch("https://logi-stack-svr.vercel.app/Report").then((res) => res.text()).then((text) => setMdContent(text)).catch(() => setMdContent('Failed to parse report file from workspace root.'));
     }, []);
 
     return (

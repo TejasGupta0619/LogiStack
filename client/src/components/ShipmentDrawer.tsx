@@ -10,11 +10,10 @@ import {
     ChevronUp,
     AlertTriangle,
 } from 'lucide-react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { Shipment, PendingAssignment, ShipmentPriority as ShipmentPriorityType } from '../types';
 import { AssignmentStatus, PRIORITY_META, ShipmentPriority } from '../types';
 import ShipmentCard from './ShipmentCard';
-
 
 /**
  * ShipmentDrawerProps

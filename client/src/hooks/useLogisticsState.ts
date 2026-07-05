@@ -15,7 +15,7 @@ import {
 } from "../types";
 
 //backend url hardcode in development
-const API_BASE = "http://localhost:4000";
+const API_BASE = "https://logi-stack-svr.vercel.app";
 
 // duration exit animation plays before the card is truly gone
 const REMOVE_ANIMATION_MS = 500;
