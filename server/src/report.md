@@ -1,6 +1,9 @@
 # Engineering Report: Full-Stack Logistics Dashboard (LogiStack)
 
+<br />
+
 **Technical Assessment & Implementation Architecture**
+<br />
 
 ---
 
