@@ -28,7 +28,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // fixed in development
-app.use(cors({ origin: ["http://localhost:5173"] }));
+app.use(cors({ origin: ["https://logi-stack-cnt.vercel.app"] }));
 app.use(express.json());
 
 let sseClients: Response[] = [];
